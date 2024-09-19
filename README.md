@@ -4,7 +4,7 @@ Aster News, gündəlik xəbərləri API vasitəsilə çəkən və istifadəçil�
 
 ## Canlı Demo
 
-Layihənin canlı versiyasını burada görə bilərsiniz: [Aster News Canlı Demo](https://aster-news-dma-1.netlify.app)
+Layihənin canlı versiyasını burada görə bilərsiniz: [Aster News Canlı Demo](https://news-aster.netlify.app/)
 
 ## Xüsusiyyətlər
 
@@ -32,12 +32,12 @@ Layihəni yerli mühitinizdə işə salmaq üçün aşağıdakı addımları izl
 
 1. Repo-nu klonlayın:
    ```
-   git clone https://github.com/eminazeroglu/aster-news-dma-1.git
+   git clone https://github.com/ramin-xanif-muslim/aster-news-react
    ```
 
 2. Layihə qovluğuna keçin:
    ```
-   cd aster-news-dma-1
+   cd aster-news-react
    ```
 
 3. Asılılıqları quraşdırın:

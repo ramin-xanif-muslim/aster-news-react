@@ -1,6 +1,6 @@
 import {FiSearch} from "react-icons/fi";
 import menus from "../../router/menus";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {route, translate} from "utils/helper.jsx";
 import {useEffect, useState} from "react";
 import {useFetchNewsAll} from "hooks/useFetch.jsx";
@@ -32,6 +32,8 @@ function Header() {
         }
     }, [items])
 
+    const navigate = useNavigate()
+
     return (
         <header className="py-[15px] flex items-center justify-between">
             <div className="relative">
@@ -47,17 +49,23 @@ function Header() {
                     <div className="absolute top-full dark:bg-gray-800 dark:border-gray-700 bg-white border border-gray-200 left-0 right-0 z-[999]">
                         <Scrollbar>
                             <ul className="divide-y dark:divide-gray-700 max-h-[350px]">
-                                {searchResult.map((item, index) => (
-                                    <li key={index} className="p-2 flex items-center relative gap-x-2 text-[14px]">
-                                        <Link to={'/'} className="absolute inset-0 z-10"/>
-                                        <figure className="size-[40px] shrink-0 rounded-full overflow-hidden">
-                                            <img className="size-full object-cover" src={item.photo} alt=""/>
-                                        </figure>
-                                        <div>
-                                            <span>{item.title}</span>
-                                        </div>
-                                    </li>
-                                ))}
+                                {searchResult.map((item, index) => {
+                                    const handleClick = () => {
+                                        navigate(route('view', { slug: item?.slug || '/' }))
+                                        setText("")
+                                        setSearchResult([])
+                                    }
+                                    return (
+                                        <li onClick={handleClick} key={index} className="p-2 flex items-center relative gap-x-2 text-[14px] cursor-pointer">
+                                            <figure className="size-[40px] shrink-0 rounded-full overflow-hidden">
+                                                <img className="size-full object-cover" src={item.photo} alt=""/>
+                                            </figure>
+                                            <div>
+                                                <span>{item.title}</span>
+                                            </div>
+                                        </li>
+                                    )
+                                })}
                             </ul>
                         </Scrollbar>
                     </div>
