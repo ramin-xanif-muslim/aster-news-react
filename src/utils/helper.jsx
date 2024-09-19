@@ -39,7 +39,7 @@ export const dynamicImport = async () => {
             const module = await moduleFiles[path]();
             modules[fileName] = module.default || module;
         } catch (e) {
-            console.error(`Error importing ${moduleName}:`, error);
+            console.error(`Error importing ${moduleFiles}:`, e.message);
         }
     }
 
