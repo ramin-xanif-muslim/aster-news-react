@@ -4,7 +4,6 @@ import Button from "../button";
 function SubscriptionBox() {
 
     const handelClick = () => {
-        alert('Click');
     }
 
     return (

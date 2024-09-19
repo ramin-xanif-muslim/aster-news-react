@@ -20,7 +20,7 @@ function LeftBlock() {
                         <Navbar />
 
                         <div className="px-[17px]">
-                            <SubscriptionBox />
+                            {/* <SubscriptionBox /> */}
                         </div>
                     </div>
                 </Scrollbar>

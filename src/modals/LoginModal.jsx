@@ -36,7 +36,7 @@ function LoginModal() {
                             required={true}
                             error="email"
                         >
-                            <FormInput value={values.email} onChnage={e => setField('email', e)} />
+                            <FormInput value={values.email} onChange={e => setField('email', e)} />
                         </FormGroup>
                     </div>
                     <div>
@@ -45,7 +45,7 @@ function LoginModal() {
                             required={true}
                             error="password"
                         >
-                            <FormInput password={true} value={values.password} onChnage={e => setField('password', e)} />
+                            <FormInput password={true} value={values.password} onChange={e => setField('password', e)} />
                         </FormGroup>
                     </div>
                     <div>
